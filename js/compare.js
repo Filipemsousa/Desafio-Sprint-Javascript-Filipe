@@ -31,34 +31,18 @@ function GetCarArrPosition(arr, carClass) {
 
 function SetCarToCompare(el, carClass) {
    
-    if(carClass instanceof Car){
-        // 1. Verifica se o carro já existe no array    
-        const position = GetCarArrPosition(carArr, carClass);   
+    if(carClass instanceof Car){       
         if(el.checked){
-            // Vamos ajustar para o máximo de 2 para alinhar com o HTML existente.
-            const MAX_CARS_COMPARE = 2; 
-
-            if(position === -1 && carArr.length < MAX_CARS_COMPARE){ 
-                carArr.push(carClass); // Adiciona o carro ao array
-                console.log(`Carro ${carClass.nome} adicionado para comparação.`);
-            }  else if (carArr.length >= MAX_CARS_COMPARE) {
-                // Opção para não permitir mais de N carros
-                alert(`Máximo de ${MAX_CARS_COMPARE} carros para comparação atingido!`);
-                el.checked = false; // Desmarca o elemento
             
+
         } else {
-            // Se o carro for desmarcado (unchecked)
-            if(position !== -1){
-                carArr.splice(position, 1); // Remove o carro do array
-                console.log(`Carro ${carClass.nome} removido da comparação.`);
-            }
           
         } 
     } else {
         throw "You need set a Car Class";
     }
 }
-}
+   
 
 function ShowCompare() {
     if(carArr.length < 2) {

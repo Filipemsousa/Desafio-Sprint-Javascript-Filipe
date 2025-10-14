@@ -86,7 +86,29 @@ nav li {
 
 main {
     min-height: calc(100% - 167px);
+    display: flex;
+    flex-direction: column;
 }
+
+.botao_voltar, .botao_avancar {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.botao_voltar {
+    left: 170px;
+}
+
+.botao_avancar {
+    right: 170px;
+}
+
+
 
 nav#social {
     display: inline;
