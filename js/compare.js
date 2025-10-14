@@ -18,6 +18,8 @@ class Car {
        this.roda = roda;
        this.image = image;
     }
+
+   
 } 
 
 // search on array if exist carClass returning 1 if not return -1
@@ -33,10 +35,13 @@ function SetCarToCompare(el, carClass) {
    
     if(carClass instanceof Car){       
         if(el.checked){
-            
+            carArr.push(carClass);
 
         } else {
-          
+          const pos = GetCarArrPosition(carArr,carClass);
+          if(pos >-1){
+            carArr.splice(pos,1);
+          }
         } 
     } else {
         throw "You need set a Car Class";
@@ -45,7 +50,7 @@ function SetCarToCompare(el, carClass) {
    
 
 function ShowCompare() {
-    if(carArr.length < 2) {
+    if(carArr.length !== 2) {
         alert("Precisa marcar 2 carros para apresentar a comparação");
         return;
     }
@@ -59,5 +64,11 @@ function HideCompare(){
 }
 
 function UpdateCompareTable() {
+    const car1 = carArr[0];
+    const car2 = carArr[1];
+    document.querySelector("#compare_image_0").innerHTML = `<img src="${car1.image}" alt="">`;
+    document.querySelector("#compare_image_1").innerHTML = `<img src="${car2.image}" alt="">`;
+    document.querySelector("#compare_modelo_0").innerHTML = `<p>${car1.nome}</p>`;
+    document.querySelector("#compare_modelo_1").innerHTML = `<p>${car2.nome}</p>`;
     
 }
