@@ -25,24 +25,22 @@ function Post(form) {
               // LINHAS DE CONFIRMAÇÃO CRUCIAIS:
             console.log("--- NOVO CONTATO ARMAZENADO ---");
             console.log(data); // Exibe o objeto recém-criado
-            console.log("Total na Agenda:", agenda.length); // Exibe a contagem atual
-            console.log("--------------------------------");
-    
             contatoArr.push(data);
-            return data; // Retorna o objeto criado
+            //return data; // Retorna o objeto criado
+            Enviar(data);
 
 }
 
-function Enviar(event) {
+function Enviar(dados) {
 
-    if (event && event.preventDefault) {
-        event.preventDefault(); 
-    }
+   // if (event && event.preventDefault) {
+       // event.preventDefault(); 
+    //}
 
     //var nome = document.getElementById("nomeid");
 
-    if (nome.value != "" && sobrenome.value !="" && email.value != "" && cpf.value != "" && telefone.value != "" && contato.value != "") {
-        alert('Obrigado sr(a) ' + nome.value + ' os seus dados foram encaminhados com sucesso');
+    if (dados != "") {
+        alert('Obrigado sr(a) ' + dados.nome + ' os seus dados foram encaminhados com sucesso');
         
     }
 
