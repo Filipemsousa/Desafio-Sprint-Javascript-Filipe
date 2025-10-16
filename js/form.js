@@ -32,11 +32,6 @@ function Post(form) {
 }
 
 function Enviar(dados) {
-
-   // if (event && event.preventDefault) {
-       // event.preventDefault(); 
-    //}
-
     //var nome = document.getElementById("nomeid");
 
     if (dados != "") {
